@@ -7,4 +7,4 @@
 */
 
 NSPhotoLibraryUsageDescription = "so you can select a profile image";
-NSCameraUsageDescription = "so you can take a profile image";
+Localizable.strings = "so you can take a profile image";
