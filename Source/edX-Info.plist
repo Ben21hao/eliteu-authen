@@ -59,6 +59,16 @@
 				<string>com.googleusercontent.apps.260985519079-ghc7aui7iobpbtmo0t2cs93hpajssor5</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>sinaweibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb467110457</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>

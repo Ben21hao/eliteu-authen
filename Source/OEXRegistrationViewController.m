@@ -28,7 +28,7 @@
 #import "OEXUserLicenseAgreementViewController.h"
 #import "OEXUsingExternalAuthHeadingView.h"
 #import "OEXRegistrationAgreement.h"
-
+#import "TDSinaWBAuthProvider.h"
 
 NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXExternalRegistrationWithExistingAccountNotification";
 
@@ -165,6 +165,8 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
     if(self.environment.config.facebookConfig.enabled) {
         [providers addObject:[[OEXFacebookAuthProvider alloc] init]];
     }
+    [providers addObject:[[TDSinaWBAuthProvider alloc] init]];
+    
     if(providers.count > 0) {
         OEXExternalRegistrationOptionsView* headingView = [[OEXExternalRegistrationOptionsView alloc] initWithFrame:CGRectZero providers:providers];
         headingView.delegate = self;
