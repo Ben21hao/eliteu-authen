@@ -217,7 +217,7 @@
 /* Prefix used with Staff of Community TA on the posts screen */
 "BY_AUTHOR" = " {作者名称}作";
 /* Prefix used with Staff of Community TA on the posts screen */
-"BY_AUTHOR_LOWER_CASE" = "{作者名称}作";
+"BY_AUTHOR_LOWER_CASE" = "{author_name}作";
 /* Course completion title */
 "CERTIFICATES.COURSE_COMPLETION_TITLE"="祝贺你！";
 /* Course completion subtitle */
@@ -249,7 +249,7 @@
 /* Title of dropdown from which the user can select topics on New Post Screen */
 "CHOOSE_A_TOPIC" = "选择一个主题";
 /* Prompt text shown after user chooses to begin registering with an external service like Facebook or Google. {service} will be replaced with a service name like Google or Facebook. */
-"COMPLETE_REGISTRATION_INFO" = "您已经成功登录进{服务名称}。在开始您的学习之前，我们还需要了解一点您的其他信息{平台名称}。";
+"COMPLETE_REGISTRATION_INFO" = "您已经成功登录进{service}。在开始您的学习之前，我们还需要了解一点您的其他信息{platform_name}。";
 /* Prompt text shown after user chooses to begin registering with an external service like Facebook or Google */
 "COMPLETE_REGISTRATION_PROMPT" = "完成你的注册";
 /* Title of alert when confirming deletion of a video */
@@ -270,7 +270,7 @@
 "COMMENTS_CLOSED" = "词条回复不接受评论";
 /* Discussion comment (Posts screen) - {count} is a number of comments */
 /* Discussion comment (Posts screen) - {count} is a number of comments */
-"COMMENTS_TO_RESPONSE##{other}"="{数}评价";
+"COMMENTS_TO_RESPONSE##{other}"="{count}评价";
 /* Label for posts pinned by Community TA(s)" */
 "COMMUNITY_TA"="社区 TA";
 /* Label indicating the amount of time a course will take */
@@ -340,7 +340,7 @@
 /* Message shown on a course when it hasn't started yet.*/
 "COURSE_NOT_STARTED"="本课程尚未开始。";
 /* Message shown on a course when it hasn't started yet. {date} will be a localized date string */
-"COURSE_WILL_START_AT"="此课程尚未开始。请在{日期}前来查看。";
+"COURSE_WILL_START_AT"="此课程尚未开始。请在{date}前来查看。";
 /* Create a new post button title used in discussions' posts screen */
 "CREATE_A_NEW_POST"="创建一个帖子";
 /* Button text to initiate or confirm deletion */

@@ -33,6 +33,7 @@
 #import "OEXUserLicenseAgreementViewController.h"
 #import "Reachability.h"
 #import "OEXStyles.h"
+#import "TDSinaWBAuthProvider.h"
 
 #define USER_EMAIL @"USERNAME"
 
@@ -134,6 +135,7 @@
     if([self isFacebookEnabled]) {
         [providers addObject:[[OEXFacebookAuthProvider alloc] init]];
     }
+    [providers addObject:[[TDSinaWBAuthProvider alloc] init]];
 
     __weak __typeof(self) owner = self;
     OEXExternalAuthOptionsView* externalAuthOptions = [[OEXExternalAuthOptionsView alloc] initWithFrame:self.externalAuthContainer.bounds providers:providers tapAction:^(id<OEXExternalAuthProvider> provider) {

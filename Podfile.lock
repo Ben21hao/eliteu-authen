@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Analytics (3.0.7)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
@@ -74,8 +89,10 @@ PODS:
     - GoogleAnalytics (~> 3.14)
     - GoogleIDFASupport (~> 3.14)
   - Smartling.i18n (1.0.13)
+  - Weibo_SDK (3.2.3)
 
 DEPENDENCIES:
+  - AFNetworking
   - Analytics (~> 3.0.0)
   - Branch (= 0.23.5)
   - Crashlytics (~> 3.10.1)
@@ -92,9 +109,11 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 4.0)
   - Segment-GoogleAnalytics (~> 1.0.0)
   - Smartling.i18n (~> 1.0)
+  - Weibo_SDK
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - Analytics
     - Bolts
     - Branch
@@ -124,8 +143,10 @@ SPEC REPOS:
     - OHHTTPStubs
     - Segment-GoogleAnalytics
     - Smartling.i18n
+    - Weibo_SDK
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Analytics: b342fb4f43fa4f97ca6f4358b44d3295217ba294
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Branch: d92cc14a602a9c4142435d782efa741dc136d0b5
@@ -155,7 +176,8 @@ SPEC CHECKSUMS:
   OHHTTPStubs: b393565822317305b87a1440d4c7aff131679f66
   Segment-GoogleAnalytics: ffea73c99196720b28b58ea93bcc0e6d11f172e1
   Smartling.i18n: 03ef7a5643965212c6ca9ed7d65385950ca4a989
+  Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
 
-PODFILE CHECKSUM: eda74bbefd122dd9e380080e147a02b94c38ba12
+PODFILE CHECKSUM: 0b2fd7fb3797108464d16d6c649c53c3d4c82462
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

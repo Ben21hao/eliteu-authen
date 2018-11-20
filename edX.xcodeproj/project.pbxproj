@@ -593,6 +593,8 @@
 		9EEB85A71BD6564E000F3E9E /* PressableCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB85A61BD6564E000F3E9E /* PressableCustomButton.swift */; };
 		9EEFFD651B300E87002A88B0 /* OEXInterface+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFFD641B300E87002A88B0 /* OEXInterface+Swift.swift */; };
 		9EF21A9E1B4697CA000048F8 /* CourseLastAccessedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF21A9D1B4697CA000048F8 /* CourseLastAccessedController.swift */; };
+		A46E36EE21A286A800AFF524 /* TDWeiboManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E36ED21A286A700AFF524 /* TDWeiboManeger.m */; };
+		A4B5CAF921A2961D00ABFB85 /* TDSinaWBAuthProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B5CAF821A2961D00ABFB85 /* TDSinaWBAuthProvider.m */; };
 		B4132C10195AAFBE00F50B46 /* OEXAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = B4132C0F195AAFBE00F50B46 /* OEXAuthentication.m */; };
 		B419295E1A8A3F1900448AD5 /* OEXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B419295D1A8A3F1900448AD5 /* OEXNetworkManager.m */; };
 		B41F22BB1A113D3D0022E01F /* OEXDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B41F22BA1A113D3D0022E01F /* OEXDownloadManager.m */; };
@@ -1571,6 +1573,10 @@
 		9EEB85A61BD6564E000F3E9E /* PressableCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableCustomButton.swift; sourceTree = "<group>"; };
 		9EEFFD641B300E87002A88B0 /* OEXInterface+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OEXInterface+Swift.swift"; sourceTree = "<group>"; };
 		9EF21A9D1B4697CA000048F8 /* CourseLastAccessedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseLastAccessedController.swift; sourceTree = "<group>"; };
+		A46E36EC21A286A700AFF524 /* TDWeiboManeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDWeiboManeger.h; sourceTree = "<group>"; };
+		A46E36ED21A286A700AFF524 /* TDWeiboManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDWeiboManeger.m; sourceTree = "<group>"; };
+		A4B5CAF721A2961D00ABFB85 /* TDSinaWBAuthProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSinaWBAuthProvider.h; sourceTree = "<group>"; };
+		A4B5CAF821A2961D00ABFB85 /* TDSinaWBAuthProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSinaWBAuthProvider.m; sourceTree = "<group>"; };
 		A4C20D9C219D6D85002E2B3E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "zh-Hans"; path = "zh-Hans.lproj/subjects.json"; sourceTree = "<group>"; };
 		A4C20D9D219D6D85002E2B3E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "zh-Hans"; path = "zh-Hans.lproj/MobileAppEula.htm"; sourceTree = "<group>"; };
 		A4C20D9E219D6D85002E2B3E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = "zh-Hans"; path = "zh-Hans.lproj/PrivacyPolicy.htm"; sourceTree = "<group>"; };
@@ -3115,6 +3121,33 @@
 			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		A46E36EA21A286A700AFF524 /* TDFile */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5CAF621A2961D00ABFB85 /* TDAuthenProvider */,
+				A46E36EB21A286A700AFF524 /* TDThirdManager */,
+			);
+			path = TDFile;
+			sourceTree = "<group>";
+		};
+		A46E36EB21A286A700AFF524 /* TDThirdManager */ = {
+			isa = PBXGroup;
+			children = (
+				A46E36EC21A286A700AFF524 /* TDWeiboManeger.h */,
+				A46E36ED21A286A700AFF524 /* TDWeiboManeger.m */,
+			);
+			path = TDThirdManager;
+			sourceTree = "<group>";
+		};
+		A4B5CAF621A2961D00ABFB85 /* TDAuthenProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A4B5CAF721A2961D00ABFB85 /* TDSinaWBAuthProvider.h */,
+				A4B5CAF821A2961D00ABFB85 /* TDSinaWBAuthProvider.m */,
+			);
+			path = TDAuthenProvider;
+			sourceTree = "<group>";
+		};
 		B4132C0D195AAF7A00F50B46 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -3603,6 +3636,7 @@
 				E09B9D691D06C91D0080BAE0 /* VersionUpgrade */,
 				199B9B6419349DE800081A09 /* Videos */,
 				E0D1598F1EB87604005E2A76 /* WhatsNew */,
+				A46E36EA21A286A700AFF524 /* TDFile */,
 				77ADF4A01AC1AD3500AC8955 /* XIB/Storyboard */,
 			);
 			path = Source;
@@ -4426,12 +4460,14 @@
 				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Weibo_SDK/libWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4602,6 +4638,7 @@
 				77ADF4AF1AC1F80E00AC8955 /* OEXGoogleAuthProvider.m in Sources */,
 				1A7CEA331BABA8C70043A58C /* ProfileImageView.swift in Sources */,
 				77236EED1C21C376006AC1A4 /* Paginator.swift in Sources */,
+				A46E36EE21A286A800AFF524 /* TDWeiboManeger.m in Sources */,
 				B7CCC739209B16B100A66923 /* ConstraintRelatableTarget.swift in Sources */,
 				1A8172511C3C1F2E007262AA /* OEXConfig.swift in Sources */,
 				77D6A9A61C28F98A00E67CCF /* EnrolledCoursesViewController.swift in Sources */,
@@ -4870,6 +4907,7 @@
 				B4B6D5E91A9490FC000F44E8 /* OEXRegistrationViewController.m in Sources */,
 				77ADF4A31AC1AF9800AC8955 /* OEXFacebookAuthProvider.m in Sources */,
 				775434831AD7394D00635A40 /* OEXPushNotificationManager.m in Sources */,
+				A4B5CAF921A2961D00ABFB85 /* TDSinaWBAuthProvider.m in Sources */,
 				7793764F1BED404C00900A8C /* OEXConfig+URLCredentialProvider.swift in Sources */,
 				77E648591C91235A00B6740D /* OEXConfig+AppFeatures.swift in Sources */,
 				2254EF03207610FF00BA183C /* CustomPlayerButton.swift in Sources */,

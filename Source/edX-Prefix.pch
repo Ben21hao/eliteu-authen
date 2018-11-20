@@ -24,4 +24,11 @@
 #import "OEXCast.h"
 #import "OEXConstants.h"
 
+//微博
+static NSString* const WBAPPKey = @"467110457";
+static NSString* const WBURLSchema = @"wb467110457";
+static NSString* const WBSecret = @"a7ed2fd3055c2d5f1500d4b087051794";
+static NSString* const WBRedirectURL = @"http://www.eliteu.xyz/auth/complete/weibo/";
+
+
 #endif
