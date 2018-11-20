@@ -78,8 +78,6 @@
     if ([response isKindOfClass:WBAuthorizeResponse.class]) {
         if (response.statusCode == WeiboSDKResponseStatusCodeSuccess) {//成功
             NSLog(@"微博 -- 成功");
-//            WBAuthorizeResponse *authResp = (WBAuthorizeResponse *)response;
-//            [self getWeiboUserInfo:authResp];
         }
         else if (response.statusCode == WeiboSDKResponseStatusCodeUserCancel) {//用户取消发送
             NSLog(@"微博 -- 用户取消发送");
@@ -93,10 +91,13 @@
         
         if (self.compleHandler != nil) {
             if (response.statusCode == WeiboSDKResponseStatusCodeSuccess) {
-                
+                WBAuthorizeResponse *authResp = (WBAuthorizeResponse *)response;
+                self.compleHandler(authResp.accessToken, authResp.userID, nil);
             }
-            WBAuthorizeResponse *authResp = (WBAuthorizeResponse *)response;
-            self.compleHandler(authResp.accessToken, authResp.userID, nil);
+            else {
+                NSError *error = [NSError errorWithDomain:@"错误" code:response.statusCode userInfo:nil];
+                self.compleHandler(nil, nil, error);
+            }
         }
         [self cleanHandler];
     }
@@ -107,11 +108,11 @@
 }
 
 
-- (void)getWeiboUserInfo:(WBAuthorizeResponse *)response {
+- (void)getWeiboUserInfo:(NSString *)accessToken userid:(NSString *)userID completion:(TDSinaUserInfo)completion {
     
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setValue:response.accessToken forKey:@"access_token"];
-    [dic setValue:response.userID forKey:@"uid"];
+    [dic setValue:accessToken forKey:@"access_token"];
+    [dic setValue:userID forKey:@"uid"];
     
     NSString *url = @"https://api.weibo.com/2/users/show.json";
     NSLog(@"微博 -->> %@",dic);
@@ -119,8 +120,11 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"微博成功获取信息 -- %@",responseObject);
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        completion(dic,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"微博获取信息失败 -- %@",error);
+        completion(nil,error);
     }];
 }
 

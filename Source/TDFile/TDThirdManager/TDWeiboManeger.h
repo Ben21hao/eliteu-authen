@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^TDSinaWbAuthCompleHandler)(NSString *token,NSString *userid,NSError *error);
+typedef void (^TDSinaUserInfo)(NSDictionary* userProfile, NSError* error);
 
 @interface TDWeiboManeger : NSObject
 
@@ -21,5 +22,7 @@ typedef void (^TDSinaWbAuthCompleHandler)(NSString *token,NSString *userid,NSErr
 - (BOOL)isWeiboInstalled;
 //处理拉起应用
 - (BOOL)handleOpenURL:(NSURL *)url;
+//获取用户信息
+- (void)getWeiboUserInfo:(NSString *)accessToken userid:(NSString *)userID completion:(TDSinaUserInfo)completion;
 
 @end
