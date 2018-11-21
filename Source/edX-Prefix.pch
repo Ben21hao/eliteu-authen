@@ -30,5 +30,13 @@ static NSString* const WBURLSchema = @"wb467110457";
 static NSString* const WBSecret = @"a7ed2fd3055c2d5f1500d4b087051794";
 static NSString* const WBRedirectURL = @"http://www.eliteu.xyz/auth/complete/weibo/";
 
+//微信
+static NSString* const WXAPPID = @"wx89dc4dc519a2f935";
+static NSString* const WXURLSchema = @"wx89dc4dc519a2f935";
+static NSString* const WXSecret = @"fa9e442eccb5b78287b9f36a20d376ea";
 
+//QQ
+static NSString* const TencentAPPID = @"101521846";
+static NSString* const TencentSecret = @"af14dc872cb33953a991dae85e434ce1";
+static NSString* const TencentSchema = @"tencent101521846";
 #endif

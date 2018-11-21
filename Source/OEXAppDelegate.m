@@ -37,6 +37,8 @@
 #import "OEXSession.h"
 #import "OEXSegmentConfig.h"
 #import "TDWeiboManeger.h"
+#import "TDWechatManager.h"
+#import "TDQQManager.h"
 
 @interface OEXAppDelegate () <UIApplicationDelegate>
 
@@ -82,6 +84,7 @@
     [self configureFabricKits:launchOptions];
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
+    [TDWechatManager wechatRegister];
     [TDWeiboManeger weiboRegister:YES];
     
     return YES;
@@ -124,24 +127,24 @@
 }
 
 - (BOOL)handleUrl:(NSURL *)url {
-//    if ([WXURLSchema isEqualToString:[url scheme]]) {
-//        return [[TDWechatManager shareManager] handleOpenURL:url];
-//    }
-//    else if ([TencentSchema isEqualToString:[url scheme]]) {
-//        return [[TDQQManager shareManager] handleOpenURL:url];
-//    }
-//    else if ([WBURLSchema isEqualToString:[url scheme]]) {
+    if ([WXURLSchema isEqualToString:[url scheme]]) {
+        return [[TDWechatManager shareManager] handleOpenURL:url];
+    }
+    else if ([TencentSchema isEqualToString:[url scheme]]) {
+        return [[TDQQManager shareManager] handleOpenURL:url];
+    }
+    else if ([WBURLSchema isEqualToString:[url scheme]]) {
         return [[TDWeiboManeger shareManager] handleOpenURL:url];
-//    }
-//    else {
-//        return NO;
-//    }
+    }
+    else {
+        return NO;
+    }
 }
 
 
 // Respond to Universal Links
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-//- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+//- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
     if (self.environment.config.fabricConfig.kits.branchConfig.enabled) {
         return [[Branch getInstance] continueUserActivity:userActivity];
     }

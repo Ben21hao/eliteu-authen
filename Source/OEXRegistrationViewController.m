@@ -29,6 +29,8 @@
 #import "OEXUsingExternalAuthHeadingView.h"
 #import "OEXRegistrationAgreement.h"
 #import "TDSinaWBAuthProvider.h"
+#import "TDWeixinAuthProvider.h"
+#import "TDQQAuthProvider.h"
 
 NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXExternalRegistrationWithExistingAccountNotification";
 
@@ -159,12 +161,14 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
     [self.scrollView addGestureRecognizer:tapGesture];
     
     NSMutableArray* providers = [[NSMutableArray alloc] init];
-    if(self.environment.config.googleConfig.enabled) {
-        [providers addObject:[[OEXGoogleAuthProvider alloc] init]];
-    }
-    if(self.environment.config.facebookConfig.enabled) {
-        [providers addObject:[[OEXFacebookAuthProvider alloc] init]];
-    }
+//    if(self.environment.config.googleConfig.enabled) {
+//        [providers addObject:[[OEXGoogleAuthProvider alloc] init]];
+//    }
+//    if(self.environment.config.facebookConfig.enabled) {
+//        [providers addObject:[[OEXFacebookAuthProvider alloc] init]];
+//    }
+    [providers addObject:[[TDWeixinAuthProvider alloc] init]];
+    [providers addObject:[[TDQQAuthProvider alloc] init]];
     [providers addObject:[[TDSinaWBAuthProvider alloc] init]];
     
     if(providers.count > 0) {

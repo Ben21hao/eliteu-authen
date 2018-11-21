@@ -766,6 +766,11 @@ SOFTWARE.
    limitations under the License.
 
 
+## WechatOpenSDK
+
+Copyright 2018 tencent.com. All rights reserved.
+
+
 ## Weibo_SDK
 
 
