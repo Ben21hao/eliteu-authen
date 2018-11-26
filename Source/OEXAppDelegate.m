@@ -127,13 +127,18 @@
 }
 
 - (BOOL)handleUrl:(NSURL *)url {
-    if ([WXURLSchema isEqualToString:[url scheme]]) {
+    
+    NSString *wxSchema = [[OEXConfig sharedConfig] weixinAPPID];
+    NSString *tecentSchema = [NSString stringWithFormat:@"tencent%@",[[OEXConfig sharedConfig] tencentAPPID]];
+    NSString *wbSchema = [NSString stringWithFormat:@"wb%@",[[OEXConfig sharedConfig] sinaAPPKey]];
+    
+    if ([wxSchema isEqualToString:[url scheme]]) {
         return [[TDWechatManager shareManager] handleOpenURL:url];
     }
-    else if ([TencentSchema isEqualToString:[url scheme]]) {
+    else if ([tecentSchema isEqualToString:[url scheme]]) {
         return [[TDQQManager shareManager] handleOpenURL:url];
     }
-    else if ([WBURLSchema isEqualToString:[url scheme]]) {
+    else if ([wbSchema isEqualToString:[url scheme]]) {
         return [[TDWeiboManeger shareManager] handleOpenURL:url];
     }
     else {

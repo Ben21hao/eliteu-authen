@@ -8,6 +8,7 @@
 
 #import "TDWechatManager.h"
 #import <WXApi.h>
+#import "OEXConfig.h"
 
 @interface TDWechatManager () <WXApiDelegate>
 
@@ -27,7 +28,8 @@
 }
 
 + (void)wechatRegister { //向微信注册
-    [WXApi registerApp:WXAPPID];
+    NSString *appid = [[OEXConfig sharedConfig] weixinAPPID];
+    [WXApi registerApp:appid];
 }
 
 - (BOOL)wxAppInstall {//是否安装微信
@@ -79,7 +81,9 @@
     if (self.compleHandler != nil) {
         if (response.errCode == WXSuccess) {
             //登录成功
-            NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",WXAPPID,WXSecret,response.code];
+            NSString *appid = [[OEXConfig sharedConfig] weixinAPPID];
+            NSString *appSecret = [[OEXConfig sharedConfig] weixinSecret];
+            NSString *url = [NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",appid,appSecret,response.code];
 //            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSURL *zoneUrl = [NSURL URLWithString:url];
                 NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];

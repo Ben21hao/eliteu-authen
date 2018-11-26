@@ -9,6 +9,7 @@
 #import "TDWeiboManeger.h"
 #import <Weibo_SDK/WeiboSDK.h>
 #import <AFNetworking/AFNetworking.h>
+#import "OEXConfig.h"
 
 @interface TDWeiboManeger () <WeiboSDKDelegate>
 @property (nonatomic,strong) WBAuthorizeRequest *request;
@@ -28,16 +29,18 @@
 
 //微博注册
 + (void)weiboRegister:(BOOL)enable {
+    NSString *key = [[OEXConfig sharedConfig] sinaAPPKey];
     [WeiboSDK enableDebugMode:enable];
-    [WeiboSDK registerApp:WBAPPKey];
+    [WeiboSDK registerApp:key];
 }
 
 //微博登录
 - (void)weiboAuthLogin:(TDSinaWbAuthCompleHandler)compleHandler {
     self.compleHandler = compleHandler;
     
+    NSString *redirectUrl = [[OEXConfig sharedConfig] sinaTRedirectUrl];
     self.request = [WBAuthorizeRequest request];
-    self.request.redirectURI = WBRedirectURL;
+    self.request.redirectURI = redirectUrl;
     self.request.scope = @"all";
     self.request.userInfo = @{@"SSO_From": @"SendMessageToWeiboViewController",
                          @"Other_Info_1": [NSNumber numberWithInt:123],

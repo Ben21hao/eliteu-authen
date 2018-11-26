@@ -9,6 +9,7 @@
 #import "TDQQManager.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <AFNetworking/AFNetworking.h>
+#import "OEXConfig.h"
 
 @interface TDQQManager () <TencentLoginDelegate,TencentSessionDelegate>
 
@@ -35,7 +36,8 @@
 - (void)qqAuthenLogin:(TDQQAuthHandler)compleHandler {
     self.compleHandler = compleHandler;
     
-    self.tencentOauth = [[TencentOAuth alloc] initWithAppId:TencentAPPID andDelegate:self];
+    NSString *appid = [[OEXConfig sharedConfig] tencentAPPID];
+    self.tencentOauth = [[TencentOAuth alloc] initWithAppId:appid andDelegate:self];
 //    self.tencentOauth.authShareType = AuthShareType_QQ;
     NSArray *array = [NSArray arrayWithObjects:
                       kOPEN_PERMISSION_GET_USER_INFO,

@@ -29,7 +29,7 @@
 - (OEXExternalAuthProviderButton*)freshAuthButton {
     OEXExternalAuthProviderButton* button = [[OEXExternalAuthProviderButton alloc] initWithFrame:CGRectZero];
     button.provider = self;
-    [button setImage:[UIImage imageNamed:@"qq_logo_white"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"icon_facebook_white"] forState:UIControlStateNormal];
     [button useBackgroundImageOfColor:[self QQAuthColor]];
     return button;
 }
