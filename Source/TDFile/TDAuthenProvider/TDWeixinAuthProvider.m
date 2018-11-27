@@ -26,11 +26,10 @@
     return @"weixin";
 }
 
-- (OEXExternalAuthProviderButton*)freshAuthButton {
-    OEXExternalAuthProviderButton* button = [[OEXExternalAuthProviderButton alloc] initWithFrame:CGRectZero];
-    button.provider = self;
-    [button setImage:[UIImage imageNamed:@"icon_facebook_white"] forState:UIControlStateNormal];
-    [button useBackgroundImageOfColor:[self weixinColor]];
+- (UIButton *)freshAuthButton {
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectZero];
+    [button setImage:[UIImage imageNamed:@"weixin_logo"] forState:UIControlStateNormal];
+//    button.backgroundColor = [self weixinColor];
     return button;
 }
 
